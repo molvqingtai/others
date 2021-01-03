@@ -1,0 +1,36 @@
+{
+  "name": "others",
+  "version": "1.0.0",
+  "description": "Some code that has nowhere to go",
+  "main": "index.js",
+  "scripts": {
+    "start": "video-crawler/src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molvqingtai/others.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/molvqingtai/others/issues"
+  },
+  "homepage": "https://github.com/molvqingtai/others#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "playwright": "^1.7.1",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "puppeteer": "^5.5.0"
+  }
+}
