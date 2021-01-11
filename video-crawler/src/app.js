@@ -1,6 +1,9 @@
+const homedir = require('os').homedir()
+
 const { chromium } = require('playwright')
 const asyncFilter = require('./utils/asyncFilter.js')
 const asyncMap = require('./utils/asyncMap.js')
+const download = require('./utils/download.js')
 
 ;(async () => {
   const browser = await chromium.launch({ headless: false })
@@ -31,9 +34,18 @@ const asyncMap = require('./utils/asyncMap.js')
       return videos.length && { name, videos }
     }
   )
-  // debugger
+
   videoInfoList.forEach(({ name, videos }) => {
-    videos.forEach((item) => {})
+    videos.forEach(async (url, index) => {
+      const path = `${homedir}/Downloads/yuque.com/${name}/${index}.mp4`
+      try {
+        await download(url, path)
+        console.log(`download successful:${path}`)
+      } catch (error) {
+        console.log(`Download failed:${path}`)
+        console.log(error.message)
+      }
+    })
   })
   await browser.close()
 })()

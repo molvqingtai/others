@@ -1,6 +1,6 @@
 const asyncFilter = async (array, action, reject = true) => {
   const resolves = []
-  for (item of array) {
+  for (const item of array) {
     try {
       const resolve = await action(item)
       resolve && resolves.push(resolve)
